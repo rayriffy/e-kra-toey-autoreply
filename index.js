@@ -2,6 +2,9 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const express = require('express')
 
+const routeBot = require('./routes/bot')
+const routeREST = require('./routes/rest')
+
 const server = express()
 
 server.use(bodyParser.json())
@@ -24,6 +27,9 @@ server.get('/', (req, res) => {
     },
   })
 })
+
+server.use('/bot', routeBot)
+server.use('/rest', routeREST)
 
 server.all('*', (req, res) => {
   res.status(404).send({
