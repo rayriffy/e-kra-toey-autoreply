@@ -4,6 +4,9 @@
   "builds": [
       { "src": "**/*.js", "use": "@now/node" }
   ],
+  "env": {
+    "LINE_TOKEN": "@kratoey_linetoken"
+  },
   "regions": ["all"],
   "routes": [
     {
