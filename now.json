@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "name": "minecraft-avatar",
+  "builds": [
+      { "src": "**/*.js", "use": "@now/node" }
+  ],
+  "regions": ["all"],
+  "routes": [
+    {
+      "src": "/.*",
+      "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+      },
+      "dest": "/index.js"
+    }
+  ]
+}
